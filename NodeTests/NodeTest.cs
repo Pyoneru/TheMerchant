@@ -249,6 +249,7 @@ namespace NodeTests
             Assert.IsFalse(node.HasAnyChild());
         }
 
+
         #endregion HasAnyChild
 
         #region HasChild

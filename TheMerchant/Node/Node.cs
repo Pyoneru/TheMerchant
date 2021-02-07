@@ -71,27 +71,37 @@ namespace TheMerchant.Node
 
         public bool HasChild(string name)
         {
+            if (name == null)
+                throw new ArgumentNullException("Name argument is null.");
             return this.Children.Find(node => node.Name.Equals(name)) != null;
         }
 
         public int CountChildren(string name)
         {
+            if (name == null)
+                throw new ArgumentNullException("Name argument is null.");
             if (this.Children.Count == 0) return -1;
             return this.Children.FindAll(node => node.Name.Equals(name)).Count;
         }
 
         public bool OnlyChild(string name)
         {
+            if (name == null)
+                throw new ArgumentNullException("Name argument is null.");
             return CountChildren(name) == 1;
         }
 
         public Node GetChild(string name)
         {
+            if (name == null)
+                throw new ArgumentNullException("Name argument is null.");
             return this.Children.Find(node => node.Name.Equals(name));
         }
 
         public List<Node> GetChildren(string name)
         {
+            if (name == null)
+                throw new ArgumentNullException("Name argument is null.");
             return this.Children.FindAll(node => node.Name.Equals(name));
         }
 
