@@ -56,7 +56,7 @@ namespace NodeTests
 
             Node next = new Node("next", parent);
 
-            Assert.Equals("parent", next.Parent.Name);
+            Assert.AreEqual("parent", next.Parent.Name);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace NodeTests
             Node node = new Node("node");
             node.Children.Add(new Node("child"));
 
-            Assert.AreEqual("child", node.Children[0]);
+            Assert.AreEqual("child", node.Children[0].Name);
         }
 
         #endregion Children
@@ -274,7 +274,7 @@ namespace NodeTests
 
             Node node = new Node("node", null, children);
 
-            Assert.IsTrue(node.HasChild("traget"));
+            Assert.IsTrue(node.HasChild("target"));
         }
 
         /// <summary>
@@ -395,7 +395,7 @@ namespace NodeTests
 
             Node node = new Node("node", null, children);
 
-            Assert.AreEqual(2, node.CountChildren());
+            Assert.AreEqual(2, node.CountChildren("node"));
         }
 
         #endregion CountChildren
@@ -577,7 +577,7 @@ namespace NodeTests
 
             Node node = new Node("node", null, children);
 
-            IList<Node> found = node.GetChildren("target");
+            List<Node> found = node.GetChildren("node");
 
             Assert.AreEqual(3, found.Count);
         }
