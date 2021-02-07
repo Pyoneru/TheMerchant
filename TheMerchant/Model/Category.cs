@@ -21,6 +21,11 @@ namespace TheMerchant.Model
         /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Description should contains information about what a kind of products should be in this category.
+        /// </summary>
+        public string Description { get; set; }
+
         public override bool Equals(object obj)
         {
             return Equals(obj as Category);
