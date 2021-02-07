@@ -323,6 +323,16 @@ namespace NodeTests
             Assert.IsTrue(node.HasChild("node"));
         }
 
+        /// <summary>
+        /// Throw ArugmentNullException if argument is null
+        /// </summary>
+        [TestMethod]
+        public void HasChildNullNameTest()
+        {
+            Node node = new Node("node");
+
+            Assert.ThrowsException<ArgumentNullException>(() => node.HasChild(null));
+        }
 
         #endregion HasChild
 
@@ -333,7 +343,7 @@ namespace NodeTests
         /// Only one child with the name in this test.
         /// </summary>
         [TestMethod]
-        public void CountChildTheOnetest()
+        public void CountChildrenTheOnetest()
         {
             Node[] children =
             {
@@ -354,7 +364,7 @@ namespace NodeTests
         /// A few children with the name in this test.
         /// </summary>
         [TestMethod]
-        public void CountChildAFewChildrenTest()
+        public void CountChildrenAFewChildrenTest()
         {
             Node[] children =
             {
@@ -374,7 +384,7 @@ namespace NodeTests
         /// If Children is empty should return -1
         /// </summary>
         [TestMethod]
-        public void CountChildWithEmptyChildrenTest()
+        public void CountChildrenWithEmptyChildrenTest()
         {
             Node node = new Node("node");
 
@@ -385,7 +395,7 @@ namespace NodeTests
         /// If node has the same with his children, no count him 
         /// </summary>
         [TestMethod]
-        public void CountChildNodeAndChildrenTheSameNameTest()
+        public void CountChildrenNodeAndChildrenTheSameNameTest()
         {
             Node[] children =
             {
@@ -396,6 +406,17 @@ namespace NodeTests
             Node node = new Node("node", null, children);
 
             Assert.AreEqual(2, node.CountChildren("node"));
+        }
+
+        /// <summary>
+        /// Throw ArugmentNullException if argument is null
+        /// </summary>
+        [TestMethod]
+        public void CountChildrenNullNameTest()
+        {
+            Node node = new Node("node");
+
+            Assert.ThrowsException<ArgumentNullException>(() => node.CountChildren(null));
         }
 
         #endregion CountChildren
@@ -463,6 +484,17 @@ namespace NodeTests
             Assert.IsTrue(node.OnlyChild("node"));
         }
 
+        /// <summary>
+        /// Throw ArugmentNullException if argument is null 
+        /// </summary>
+        [TestMethod]
+        public void OnlyChildNullNameTest()
+        {
+            Node node = new Node("node");
+
+            Assert.ThrowsException<ArgumentNullException>(() => node.OnlyChild(null));
+        }
+
         #endregion
 
         #region GetChild
@@ -525,6 +557,17 @@ namespace NodeTests
             Node node = new Node("node", null, children);
 
             Assert.IsNull(node.GetChild("strawberry"));
+        }
+
+        /// <summary>
+        /// Throw ArugmentNullException if argument is null
+        /// </summary>
+        [TestMethod]
+        public void GetChildNullNameTest()
+        {
+            Node node = new Node("node");
+
+            Assert.ThrowsException<ArgumentNullException>(() => node.GetChild(null));
         }
 
         #endregion GetChild
@@ -605,6 +648,17 @@ namespace NodeTests
             Assert.ReferenceEquals(node.Children[1], found[0]);
         }
 
+        /// <summary>
+        /// If given argument is null throw ArgumentNullException
+        /// </summary>
+        [TestMethod]
+        public void GetChildrenNullNameTest()
+        {
+            Node node = new Node("node");
+
+            Assert.ThrowsException<ArgumentNullException>(() => node.GetChildren(null));
+        }
+        
         #endregion GetChildren
 
         #region IsRoot
