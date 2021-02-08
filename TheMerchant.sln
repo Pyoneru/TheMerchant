@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMerchant", "TheMerchant\TheMerchant.csproj", "{73973CA1-7EE5-41C7-A283-408A2EF15D24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMerchant", "TheMerchant\TheMerchant.csproj", "{73973CA1-7EE5-41C7-A283-408A2EF15D24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeTests", "NodeTests\NodeTests.csproj", "{BFC6B740-C051-4582-B33C-BBA9FCE56DB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeTests", "NodeTests\NodeTests.csproj", "{BFC6B740-C051-4582-B33C-BBA9FCE56DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTests", "TimeTests\TimeTests.csproj", "{94E2FF9C-5A8E-4353-BC3C-7BCC13F870E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BFC6B740-C051-4582-B33C-BBA9FCE56DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC6B740-C051-4582-B33C-BBA9FCE56DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC6B740-C051-4582-B33C-BBA9FCE56DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E2FF9C-5A8E-4353-BC3C-7BCC13F870E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E2FF9C-5A8E-4353-BC3C-7BCC13F870E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E2FF9C-5A8E-4353-BC3C-7BCC13F870E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E2FF9C-5A8E-4353-BC3C-7BCC13F870E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
