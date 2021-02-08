@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\" />
+    <Compile Remove="Model\CLIOption.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Util\" />
   </ItemGroup>
 
