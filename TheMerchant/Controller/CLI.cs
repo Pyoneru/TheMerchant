@@ -15,14 +15,13 @@ namespace TheMerchant.Controller
         {
             Console.CursorVisible = false;
             selectedOptionIndex = 0;
-            Menu = new CLIMenu();
         }
 
         private static CLI instance;
 
         public static CLI GetInstance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = new CLI();
             }
@@ -31,12 +30,18 @@ namespace TheMerchant.Controller
 
         public void WriteMenu(CLIMenu Menu, string selectedOption)
         {
+            int cursorTop = Console.CursorTop;
+            Console.SetCursorPosition(0, 0);
+            for (int rowIndex = cursorTop; rowIndex > 0; rowIndex--)
+            {
+                Console.WriteLine(new string(' ', Console.BufferWidth));
+            }
             Console.SetCursorPosition(0, 0);
 
-            if(!Menu.Title.Equals(""))
-                Console.WriteLine("{0}\n",Menu.Title);
+            if (!Menu.Title.Equals(""))
+                Console.WriteLine("{0}{1}", Menu.Title, Environment.NewLine);
             if (!Menu.Description.Equals(""))
-                Console.WriteLine("{0}\n",Menu.Description);
+                Console.WriteLine("{0}{1}", Menu.Description, Environment.NewLine);
 
             for (int i = 0; i < Menu.Count; i++)
             {
@@ -55,7 +60,7 @@ namespace TheMerchant.Controller
         public string GetSelectedMenuOption()
         {
             WriteMenu(Menu, Menu.GetOptionName(selectedOptionIndex));
-            while (pressedKey.Key != ConsoleKey.Escape)
+            while (true)
             {
                 pressedKey = Console.ReadKey();
                 if (pressedKey.Key == ConsoleKey.DownArrow)
@@ -73,42 +78,33 @@ namespace TheMerchant.Controller
                     return Menu.GetOptionName(selectedOptionIndex);
                 }
             }
-            return null;
         }
 
-        public static string GetLine(string command = "")
+        public string GetLine(string command = "")
         {
             int cursorBaseLeft = Console.CursorLeft;
             int cursorBaseTop = Console.CursorTop;
-            Console.Write(command);
+            if (command != "")
+                Console.Write(command);
             string input = Console.ReadLine();
             Console.SetCursorPosition(cursorBaseLeft, cursorBaseTop);
-            char[] filler = new char[input.Length + command.Length];
-            for (int i = 0; i < filler.Length; i++)
-            {
-                filler[i] = ' ';
-            }
-            Console.Write(filler);
+            Console.Write(new string(' ', input.Length + command.Length));
             Console.SetCursorPosition(cursorBaseLeft, cursorBaseTop);
             return input;
         }
 
-        public static Decimal GetDecimal(string command = "")
+        public Decimal GetDecimal(string command = "")
         {
-            Console.Write(command);
-            int cursorBaseLeft = Console.CursorLeft;
-            int cursorBaseTop = Console.CursorTop;
             Decimal value = 0;
             while (true)
             {
+                int cursorBaseLeft = Console.CursorLeft;
+                int cursorBaseTop = Console.CursorTop;
+                if (command != "")
+                    Console.Write(command);
                 string input = Console.ReadLine();
                 Console.SetCursorPosition(cursorBaseLeft, cursorBaseTop);
-                char[] filler = new char[input.Length];
-                for (int i = 0; i < filler.Length; i++)
-                {
-                    filler[i] = ' ';
-                }
-                Console.Write(filler);
+                Console.Write(new string(' ', input.Length + command.Length));
                 Console.SetCursorPosition(cursorBaseLeft, cursorBaseTop);
                 try
                 {
