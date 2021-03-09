@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controller\Time\" />
     <Folder Include="Util\" />
   </ItemGroup>
 
