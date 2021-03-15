@@ -86,7 +86,7 @@ namespace TimeTests
 
             Assert.ThrowsException<ArgumentException>(() =>
             {
-                service.addHour(-1);
+                service.AddHour(ts, -1);
             });
         }
 
@@ -123,7 +123,7 @@ namespace TimeTests
 
             Assert.ThrowsException<ArgumentException>(() =>
             {
-                ts.AddMinute(-1);
+                service.AddMinute(ts, -1);
             });
         }
 
@@ -140,7 +140,7 @@ namespace TimeTests
             int newDay = nextWeek.Date.Day;
 
             Assert.AreEqual(2, newWeek);
-            Assert.AreEqual(1, newWeek);
+            Assert.AreEqual(1, newDay);
         }
     }
 }

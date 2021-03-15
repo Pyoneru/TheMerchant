@@ -17,7 +17,8 @@ namespace TheMerchant.Model
 
         public Timestamp()
         {
-
+            Date = new Date();
+            Time = new Time();
         }
 
         public override bool Equals(object obj)
