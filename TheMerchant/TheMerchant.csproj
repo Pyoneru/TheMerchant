@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <Folder Include="Controller\" />
+    <Folder Include="Controller\Time\" />
     <Folder Include="Util\" />
   </ItemGroup>
 
