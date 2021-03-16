@@ -1,3 +1,7 @@
 .vs
 TheMerchant/bin/
 TheMerchant/obj/
+NodeTests/obj/
+NodeTests/bin/
+TimeTests/obj/
+TimeTests/bin/
