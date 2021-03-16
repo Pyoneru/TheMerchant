@@ -308,18 +308,6 @@ namespace TheMerchant.Service
         }
         #endregion Operation
 
-
-        private void ValidateDay(int day)
-        {
-            if (day <= 0 || day > 28)
-                throw new ArgumentException("Day must be in range 1-28");
-        }
-
-        private void ValidateHour(int hour)
-        {
-            if (hour < 0 || hour > 23)
-                throw new ArgumentException("Hour must be in range 0-23");
-        }
         private void ValidateDate(int year, int month, int week, int day)
         {
             if (year <= 0)
@@ -331,7 +319,6 @@ namespace TheMerchant.Service
             if (day <= 0 || day > 7)
                 throw new ArgumentException("Day must be in range 1-7");
         }
-
         private void ValidateTime(int hour, int minute)
         {
             if (hour < 0 || hour > 23)
